@@ -12,7 +12,7 @@ Learn how to use JavaScript to build powerful interfaces for server-side systems
 ## Creator
 - [Github](https://github.com/cicciotazza)
 - Linkedin (to be filled)
-## Tools used.
+## Tools used
 - Parcel
 - Visual Studio Code
 - GitHub Desktop
@@ -23,17 +23,24 @@ Learn how to use JavaScript to build powerful interfaces for server-side systems
 ## Exercises
 **Task01**
 *1. Intro to Frameworks & Libraries*
+
 **Task02**
 *Building with Javascript*
+
 **Task03**
 *React Components & the Virtual DOM*
+
 **Task04**
 *Advanced React*
+
 **Task05**
 *React Bootstrap*
+
 **Task06**
 *Client-side app routing*
+
 **Task07**
 *Introduction to Redux*
+
 **Task08**
 *React Redux*

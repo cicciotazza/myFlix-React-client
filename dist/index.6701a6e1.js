@@ -946,24 +946,21 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 var _mainView = require("./components/main-view/main-view");
-var _mainViewDefault = parcelHelpers.interopDefault(_mainView);
-// Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
-// Main component (will eventually use all the others)
 class MyFlixApplication extends _reactDefault.default.Component {
     render() {
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_mainViewDefault.default, {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(_mainView.MainView, {
             __source: {
                 fileName: "src/index.jsx",
-                lineNumber: 12
+                lineNumber: 10
             },
             __self: this
         }));
     }
 }
-// Finds the root of your app
+//Find the root of myFlix app
 const container = document.getElementsByClassName('app-container')[0];
-// Tells React to render your app in the root DOM element
+//Tell React to render myFlix app in the root DOM element
 _reactDomDefault.default.render(/*#__PURE__*/ _reactDefault.default.createElement(MyFlixApplication), container);
 
   $parcel$ReactRefreshHelpers$b058.postlude(module);
@@ -22898,30 +22895,46 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
 class MainView extends _reactDefault.default.Component {
-    //method used by React to create the component
     constructor(){
         super();
-        //state initialized with
         this.state = {
             movies: [
                 {
                     _id: 1,
-                    title: 'Inception',
-                    Description: 'desc1...',
-                    ImagePath: '...'
+                    Title: 'Breaking Bad',
+                    Description: '"American neo-Western crime drama television series created and produced by Vince Gilligan.',
+                    Year: '2008',
+                    ImagePath: 'https://upload.wikimedia.org/wikipedia/en/6/61/Breaking_Bad_title_card.png',
+                    Genre: 'Crime',
+                    Director: 'Alan Ball'
                 },
                 {
                     _id: 2,
-                    title: 'The Shawshank Redemption',
-                    Description: 'desc2...',
-                    ImagePath: '...'
+                    Title: 'Game of Thrones',
+                    Description: 'Game of Thrones is an American fantasy drama television series created by David Benioff and D. B. Weiss for HBO',
+                    Year: '2011',
+                    ImagePath: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/Game_of_Thrones_title_card.jpg/250px-Game_of_Thrones_title_card.jpg',
+                    Genre: 'Fantasy',
+                    Director: 'George Raymond Martin'
                 },
                 {
                     _id: 3,
-                    title: 'Gladiator',
-                    Description: 'desc2...',
-                    ImagePath: '...'
-                }, 
+                    Title: 'The Office',
+                    Description: 'The Office is a British television mockumentary sitcom first broadcast in the UK on BBC Two on 9 July 2001.',
+                    Year: '2001',
+                    ImagePath: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Theoffice.jpg/250px-Theoffice.jpg',
+                    Genre: 'Sitcom',
+                    Director: 'Ricky Gervais'
+                },
+                {
+                    _id: 3,
+                    Title: 'Chernobyl',
+                    Description: 'Chernobyl is a 2019 historical drama television miniseries that revolves around the Chernobyl disaster of 1986 and the cleanup efforts that followed.',
+                    Year: '2019',
+                    ImagePath: 'https://upload.wikimedia.org/wikipedia/en/a/a7/Chernobyl_2019_Miniseries.jpg',
+                    Genre: 'History',
+                    Director: 'Craig Mazin'
+                }
             ],
             selectedMovie: null
         };
@@ -22933,21 +22946,20 @@ class MainView extends _reactDefault.default.Component {
     }
     render() {
         const { movies , selectedMovie  } = this.state;
-        if (movies.length === 0) return;
-        /*#__PURE__*/ _jsxRuntime.jsx("div", {
+        if (movies.length === 0) return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 33
+                lineNumber: 42
             },
             __self: this,
             children: "The list is empty!"
-        });
+        }));
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "main-view",
             __source: {
                 fileName: "src/components/main-view/main-view.jsx",
-                lineNumber: 36
+                lineNumber: 45
             },
             __self: this,
             children: selectedMovie ? /*#__PURE__*/ _jsxRuntime.jsx(_movieView.MovieView, {
@@ -22957,7 +22969,7 @@ class MainView extends _reactDefault.default.Component {
                 },
                 __source: {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 38
+                    lineNumber: 47
                 },
                 __self: this
             }) : movies.map((movie)=>/*#__PURE__*/ _jsxRuntime.jsx(_movieCard.MovieCard, {
@@ -22967,7 +22979,7 @@ class MainView extends _reactDefault.default.Component {
                     },
                     __source: {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 40
+                        lineNumber: 49
                     },
                     __self: this
                 }, movie._id)
@@ -22997,7 +23009,6 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 class MovieCard extends _reactDefault.default.Component {
     render() {
-        //this movie is movie={movie}, or x is x={movie}, same in x.title
         const { movie , onMovieClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsx("div", {
             className: "movie-card",
@@ -23006,7 +23017,7 @@ class MovieCard extends _reactDefault.default.Component {
             },
             __source: {
                 fileName: "src/components/movie-card/movie-card.jsx",
-                lineNumber: 7
+                lineNumber: 8
             },
             __self: this,
             children: movie.Title
@@ -23028,12 +23039,12 @@ $parcel$ReactRefreshHelpers$3741.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "MainView", ()=>MainView
+parcelHelpers.export(exports, "MovieView", ()=>MovieView
 );
 var _jsxRuntime = require("react/jsx-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-class MainView extends _reactDefault.default.Component {
+class MovieView extends _reactDefault.default.Component {
     render() {
         const { movie , onBackClick  } = this.props;
         return(/*#__PURE__*/ _jsxRuntime.jsxs("div", {
@@ -23116,13 +23127,69 @@ class MainView extends _reactDefault.default.Component {
                         })
                     ]
                 }),
+                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                    className: "movie-genre",
+                    __source: {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 21
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            className: "label",
+                            __source: {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 22
+                            },
+                            __self: this,
+                            children: "Genre: "
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            className: "value",
+                            __source: {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 23
+                            },
+                            __self: this,
+                            children: movie.Genre
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsxs("div", {
+                    className: "movie-director",
+                    __source: {
+                        fileName: "src/components/movie-view/movie-view.jsx",
+                        lineNumber: 25
+                    },
+                    __self: this,
+                    children: [
+                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            className: "label",
+                            __source: {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 26
+                            },
+                            __self: this,
+                            children: "Director: "
+                        }),
+                        /*#__PURE__*/ _jsxRuntime.jsx("span", {
+                            className: "value",
+                            __source: {
+                                fileName: "src/components/movie-view/movie-view.jsx",
+                                lineNumber: 27
+                            },
+                            __self: this,
+                            children: movie.Director
+                        })
+                    ]
+                }),
                 /*#__PURE__*/ _jsxRuntime.jsx("button", {
                     onClick: ()=>{
                         onBackClick(null);
                     },
                     __source: {
                         fileName: "src/components/movie-view/movie-view.jsx",
-                        lineNumber: 21
+                        lineNumber: 30
                     },
                     __self: this,
                     children: "Back"

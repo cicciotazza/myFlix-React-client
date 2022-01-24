@@ -1,6 +1,20 @@
 import React from 'react';
+import PropTypes from "prop-types";
+import './movie-view.scss';
 
 export class MovieView extends React.Component {
+
+    keypressCallback(event) {
+        console.log(event.key);
+    }
+
+    omponentDidMount() {
+        document.addEventListener('keypress', this.keypressCallback);
+    }
+
+    componentWillUnmount() {
+        document.removeEventListener('keypress', this.keypressCallback);
+    }
 
     render() {
         const { movie, onBackClick } = this.props;
@@ -13,6 +27,10 @@ export class MovieView extends React.Component {
                 <div className="movie-title">
                     <span className="label">Title: </span>
                     <span className="value">{movie.Title}</span>
+                </div>
+                <div className="movie-year">
+                    <span className="label">Year: </span>
+                    <span className="value">{movie.Year}</span>
                 </div>
                 <div className="movie-description">
                     <span className="label">Description: </span>
@@ -33,3 +51,23 @@ export class MovieView extends React.Component {
         );
     }
 }
+
+//my view from the db
+MovieView.propTypes = {
+    movie: PropTypes.shape({
+        Title: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
+        Year: PropTypes.string.isRequired,
+        Genre: PropTypes.shape({
+            Name: PropTypes.string.isRequired,
+            Description: PropTypes.string.isRequired,
+        }),
+        Director: PropTypes.shape({
+            Name: PropTypes.string.isRequired,
+            Bio: PropTypes.string.isRequired,
+            Birthday: PropTypes.string.isRequired,
+            Death: PropTypes.string.isRequired,
+        }).isRequired,
+        ImageURL: PropTypes.string.isRequired,
+    }).isRequired,
+};

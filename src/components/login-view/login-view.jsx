@@ -1,7 +1,8 @@
-//import from React with initial value of my login variable (empty string)
+//import React with initial value of my login variable (empty)
 //useState creates a local state and preserves it between the render cycles
 import React, { useState } from 'react';
 import PropTypes from "prop-types";
+
 import './login-view.scss';
 
 // array of paired values destructured

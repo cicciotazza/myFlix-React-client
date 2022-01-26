@@ -1,0 +1,40 @@
+:root {
+    --background-color: #121212;
+    --input-color: whitesmoke;
+    --text-color: #F5F5F5;
+    --main-font-size: 15px;
+    --padding: 2rem;
+    --margin: 4rem;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: var(--main-font-size);
+  }
+  
+  body {
+    font-family: 'Dongle', sans-serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    line-height: 300%;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: var(--padding);
+    margin: var(--margin);
+  }
+   
+  //Button
+  button {
+    position:center;
+    border: 5px;
+    border-color: #9400D3;
+    width: 100px;
+    background: whitesmoke;
+    color: #9400D3;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    cursor: pointer;
+  }

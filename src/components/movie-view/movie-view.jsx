@@ -52,7 +52,7 @@ export class MovieView extends React.Component {
     }
 }
 
-//my view from the db
+//my view of the db according to my Model of the final 2.10
 MovieView.propTypes = {
     movie: PropTypes.shape({
         Title: PropTypes.string.isRequired,

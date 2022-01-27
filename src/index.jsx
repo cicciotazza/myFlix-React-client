@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { MainView } from './components/main-view/main-view';
+import PropTypes from "prop-types";
+import axios from 'axios';
+import Container from 'react-bootstrap/Container';
 
 import './index.scss';
 
 class MyFlixApplication extends React.Component {
     render() {
         return (
-            <MainView />
+            <Container>
+                <MainView />
+            </Container>
         );
     }
 }

@@ -1,56 +1,86 @@
+//axios needed to fetch movies from db
 import React from 'react';
+import axios from 'axios';
+import PropTypes from "prop-types";
+import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
+
+import './main-view.scss';
+
+//LoginView at the top of the code because it will need to get the user details from the MainView
+//importing Login, Registration, MovieCard and movieview into MainView
+import { RegistrationView } from '../registration-view/registration-view';
+import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
 export class MainView extends React.Component {
 
+    //this initial state is null
     constructor() {
         super();
         this.state = {
-            movies: [
-                {
-                    _id: 1, Title: 'Breaking Bad', Description: '"American neo-Western crime drama television series created and produced by Vince Gilligan.', Year: '2008',
-                    ImagePath: 'https://upload.wikimedia.org/wikipedia/en/6/61/Breaking_Bad_title_card.png', Genre: 'Crime', Director: 'Alan Ball'
-                },
-                {
-                    _id: 2, Title: 'Game of Thrones', Description: 'Game of Thrones is an American fantasy drama television series created by David Benioff and D. B. Weiss for HBO', Year: '2011',
-                    ImagePath: 'https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/Game_of_Thrones_title_card.jpg/250px-Game_of_Thrones_title_card.jpg', Genre: 'Fantasy', Director: 'George Raymond Martin'
-                },
-                {
-                    _id: 3, Title: 'The Office', Description: 'The Office is a British television mockumentary sitcom first broadcast in the UK on BBC Two on 9 July 2001.', Year: '2001',
-                    ImagePath: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/Theoffice.jpg/250px-Theoffice.jpg', Genre: 'Sitcom', Director: 'Ricky Gervais'
-                },
-                {
-                    _id: 3, Title: 'Chernobyl', Description: 'Chernobyl is a 2019 historical drama television miniseries that revolves around the Chernobyl disaster of 1986 and the cleanup efforts that followed.', Year: '2019',
-                    ImagePath: 'https://upload.wikimedia.org/wikipedia/en/a/a7/Chernobyl_2019_Miniseries.jpg', Genre: 'History', Director: 'Craig Mazin'
-                }
-            ],
-            selectedMovie: null
+            movies: [],
+            selectedMovie: null,
+            user: null
         };
     }
 
-    setSelectedMovie(newSelectedMovie) {
+    componentDidMount() {
+        axios.get('https://herokumyflixdb.herokuapp.com/movies')
+            .then(response => {
+                this.setState({
+                    movies: response.data
+                });
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
+
+    //When clicking a movie, this function updates the state of the selectedMovie property to that movie*/
+    setSelectedMovie(movie) {
         this.setState({
-            selectedMovie: newSelectedMovie
+            selectedMovie: movie
+        });
+    }
+
+    //When a user successfully register himself
+    onRegistration(registration) {
+        this.setState({
+            registration,
+        });
+    }
+
+    //When user successfully logs in, this function updates the user property in state to that *particular user*/
+    onLoggedIn(user) {
+        this.setState({
+            user
         });
     }
 
     render() {
-        const { movies, selectedMovie } = this.state;
+        const { movies, selectedMovie, user, registration } = this.state;
+        //if there is no user, the LoginView is rendered
+        if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
+        //if there is a user logged in, the user details are *passed as a prop to the LoginView
+        if (!registration) return (<RegistrationView onRegistration={(registration) => this.onRegistration(registration)} />);
+
+        // Before the movies have been loaded
         if (movies.length === 0)
-            return <div className="main-view">The list is empty!</div>;
+            return
+        <div className="main-view">Loading...</div>;
 
         return (
+            //If the state of selectedMovie not null, that one will be returned, else all movies will be returned
             <div className="main-view">
                 {selectedMovie
                     ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
                     : movies.map(movie => (
-                        <MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }} />
+                        <MovieCard key={movie._id} movie={movie} onMovieClick={(newSelectedMovie) => { this.setSelectedMovie(newSelectedMovie) }} />
                     ))
                 }
             </div>
         );
     }
-
 }

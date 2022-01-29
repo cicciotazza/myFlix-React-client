@@ -12,7 +12,7 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 
-export class MainView extends React.Component {
+export default class MainView extends React.Component {
 
     //this initial state is null
     constructor() {
@@ -20,8 +20,9 @@ export class MainView extends React.Component {
         this.state = {
             movies: [],
             selectedMovie: null,
-            user: null
-        };
+            user: null,
+            register: null
+        }
     }
 
     componentDidMount() {
@@ -33,20 +34,20 @@ export class MainView extends React.Component {
             })
             .catch(error => {
                 console.log(error);
-            });
+            })
     }
 
     //When clicking a movie, this function updates the state of the selectedMovie property to that movie*/
-    setSelectedMovie(movie) {
+    setSelectedMovie(newSelectedMovie) {
         this.setState({
-            selectedMovie: movie
+            selectedMovie: newSelectedMovie
         });
     }
 
     //When a user successfully register himself
-    onRegistration(registration) {
+    onRegistration(user) {
         this.setState({
-            registration,
+            user
         });
     }
 
@@ -58,20 +59,17 @@ export class MainView extends React.Component {
     }
 
     render() {
-        const { movies, selectedMovie, user, registration } = this.state;
-        //if there is no user, the LoginView is rendered
-        if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-
+        const { movies, selectedMovie } = this.state;
         //if there is a user logged in, the user details are *passed as a prop to the LoginView
-        if (!registration) return (<RegistrationView onRegistration={(registration) => this.onRegistration(registration)} />);
+        //if (!registration) return (<RegistrationView onRegistration={(registration) => this.onRegistration(registration)} />);
+
+        //if there is no user, the LoginView is rendered
+        // if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
         // Before the movies have been loaded
-        if (movies.length === 0)
-            return
-        <div className="main-view">Loading...</div>;
+        if (movies.length === 0) return <div className="main-view" />;
 
         return (
-            //If the state of selectedMovie not null, that one will be returned, else all movies will be returned
             <div className="main-view">
                 {selectedMovie
                     ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />

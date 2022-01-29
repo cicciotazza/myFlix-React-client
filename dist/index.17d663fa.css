@@ -1,0 +1,34 @@
+
+* {
+  box-sizing: border-box;
+  background-color: #434343;
+}
+
+body {
+  font-family: "Dongle", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 300%;
+  padding: 1rem;
+  margin: 1rem;
+  margin-left: 5rem;
+}
+
+button {
+  position: center;
+  border: 5px;
+  border-color: #4be9c7;
+  width: 100px;
+  background: black;
+  color: #d6c312;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  cursor: pointer;
+}
+
+
+
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.17d663fa.css.map */

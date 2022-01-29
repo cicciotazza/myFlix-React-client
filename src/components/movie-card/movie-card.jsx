@@ -7,14 +7,21 @@ export class MovieCard extends React.Component {
     render() {
         const { movie, onMovieClick } = this.props;
 
-        return (
-            <div onClick={() => onMovieClick(movie)}
-                className="movie-card">{movie.Title}
-            </div>
-        );
+        return <div className="movie-card"
+            onClick={() => { onMovieClick(movie); }}>{movie.Title}</div>;
     }
 }
 
+MovieCard.propTypes = {
+    movie: PropTypes.shape({
+        Title: PropTypes.string.isRequired,
+        Description: PropTypes.string.isRequired,
+        ImagePath: PropTypes.string.isRequired
+    }).isRequired,
+    onMovieClick: PropTypes.func.isRequired
+};
+
+/*
 MovieCard.propTypes = {
     movie: PropTypes.shape({
         Title: PropTypes.string.isRequired,
@@ -33,12 +40,5 @@ MovieCard.propTypes = {
         ImageURL: PropTypes.string.isRequired,
     }).isRequired,
     onMovieClick: PropTypes.func.isRequired
-};
-
-//old sample array
-/*MovieCard.propTypes = {
-    movie: PropTypes.shape({
-        Title: PropTypes.string
-    }).isRequired,
-    onMovieClick: PropTypes.func.isRequired
-}; */
+}; 
+*/

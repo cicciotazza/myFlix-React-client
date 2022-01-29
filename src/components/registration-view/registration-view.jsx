@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
-import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
 
 import './registration-view.scss';
 
@@ -9,7 +7,9 @@ import './registration-view.scss';
 export function RegistrationView(props) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    const [name, setName] = useState("");
     const [email, setEmail] = useState('');
+    const [birthdate, setBirthdate] = useState("");
 
     //Change the state of MainView for registering and logging-ing, sending a request to the server for authenticate
     const handleSubmit = (e) => {
@@ -19,41 +19,35 @@ export function RegistrationView(props) {
     };
 
     return (
-        <Container>
-            <Row>
-                <Col md={8}>
-                    <CardGroup>
-                        <Card>
-                            <Card.Body>
-                                <Card.Title>Please Register</Card.Title>
-                                <Form>
-                                    <Form.Group>
-                                        <Form.Label>Username:</Form.Label>
-                                        <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" />
-                                    </Form.Group>
-
-                                    <Form.Group>
-                                        <Form.Label>Password:</Form.Label>
-                                        <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} minlength="8" placeholder="Password minimum 8 characters" />
-                                    </Form.Group>
-
-                                    <Form.Group>
-                                        <Form.Label>Email:</Form.Label>
-                                        <Form.Control type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" />
-                                    </Form.Group>
-
-                                    <Button variant="danger" type="submit" onClick={handleSubmit}>Submit</Button>
-                                </Form>
-                            </Card.Body>
-                        </Card>
-                    </CardGroup>
-                </Col>
-            </Row>
-        </Container>
+        <form>
+            <label className="username">Username:
+                <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+            </label>
+            <label className="name">Name:
+                <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+            </label>
+            <label className="password">Password:
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            </label>
+            <label className="email">E-mail:
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+            </label>
+            <label className="birthdate">Birth date:
+                <input type="date" value={birthdate} onChange={(e) => setBirthdate(e.target.value)} />
+            </label>
+            <button className="registerBtn" type="submit" onClick={handleSubmit}>Register </button>
+        </form>
     );
 }
 
 //Information about data when not matching the requested input
 RegistrationView.propTypes = {
+    register: PropTypes.shape({
+        username: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        password: PropTypes.string.isRequired,
+        email: PropTypes.string.isRequired,
+        birthdate: PropTypes.string.isRequired,
+    }),
     onRegistration: PropTypes.func.isRequired,
 };

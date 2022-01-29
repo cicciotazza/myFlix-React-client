@@ -1,8 +1,7 @@
-//axios needed to fetch movies from db
 import React from 'react';
+//axios needed to fetch movies from db
 import axios from 'axios';
 import PropTypes from "prop-types";
-import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
 
 import './main-view.scss';
 
@@ -21,7 +20,8 @@ export class MainView extends React.Component {
         this.state = {
             movies: [],
             selectedMovie: null,
-            user: null
+            user: null,
+            register: null
         };
     }
 
@@ -61,18 +61,15 @@ export class MainView extends React.Component {
     render() {
         const { movies, selectedMovie, user, registration } = this.state;
         //if there is no user, the LoginView is rendered
-        if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
+        //if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
 
         //if there is a user logged in, the user details are *passed as a prop to the LoginView
-        if (!registration) return (<RegistrationView onRegistration={(registration) => this.onRegistration(registration)} />);
+        //if (!registration) return (<RegistrationView onRegistration={(registration) => this.onRegistration(registration)} />);
 
         // Before the movies have been loaded
-        if (movies.length === 0)
-            return
-        <div className="main-view">Loading...</div>;
+        if (movies.length === 0) return <div className="main-view" />;
 
         return (
-            //If the state of selectedMovie not null, that one will be returned, else all movies will be returned
             <div className="main-view">
                 {selectedMovie
                     ? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
@@ -84,3 +81,5 @@ export class MainView extends React.Component {
         );
     }
 }
+
+export default MainView;

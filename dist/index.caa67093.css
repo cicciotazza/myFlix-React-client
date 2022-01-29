@@ -1,27 +1,17 @@
-* {
-  background-color: #434343;
-  box-sizing: border-box;
-  font-family: "Dongle", sans-serif;
-  color: wheat;
-  margin-top: 3%;
+.my-flix {
+  color: steelblue;
+}
+:root {
+  --background-color: #121212;
+  --input-color: whitesmoke;
+  --text-color: #F5F5F5;
+  --main-font-size: 15px;
+  --padding: 2rem;
+  --margin: 4rem;
 }
 
-/*
-:root {
-  --background-color: #434343;
-  --input-color: #F4EBDB;
-  --text-color: #E3E3E3;
-  --primary-color: #767676;
-  --secondary-color: #B2B2B2;
-  --third--color: #303030;
-  --link-color: #003B46;
-  --visited-link-color: #07575B;
-  --active-link-color: #66A5AD;
-  --button-color: #C4DFE6;
-  --header-color: #2C7873;
-  --main-font-size: 15px;
-  --padding: 2em;
-  --margin: 2em;
+* {
+  box-sizing: border-box;
 }
 
 html {
@@ -29,34 +19,181 @@ html {
 }
 
 body {
-  font-family: 'Dongle', sans-serif;
+  font-family: "Dongle", sans-serif;
   font-weight: 500;
   font-size: 1.2rem;
   line-height: 300%;
   background-color: var(--background-color);
   color: var(--text-color);
-  padding: inherit;
+  padding: var(--padding);
   margin: var(--margin);
 }
 
-button { 
-  box-sizing: border-box;
-  background: var(--primary-color);
-  border-color: #6C5F5B;
+button {
   position: center;
-  color: #4F4a45;
-  border: 4px;
-  width: 90px;
-  font-size: 1rem;
-  line-height: 1.5rem;
+  border: 5px;
+  border-color: #9400D3;
+  width: 100px;
+  background: whitesmoke;
+  color: #9400D3;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
   cursor: pointer;
-  margin: --margin;
-  padding: --padding;
 }
-*/
+:root {
+  --background-color: #121212;
+  --input-color: whitesmoke;
+  --text-color: #F5F5F5;
+  --main-font-size: 15px;
+  --padding: 2rem;
+  --margin: 4rem;
+}
 
+* {
+  box-sizing: border-box;
+}
 
+html {
+  font-size: var(--main-font-size);
+}
 
+body {
+  font-family: "Dongle", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 300%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: var(--padding);
+  margin: var(--margin);
+}
 
+button {
+  position: center;
+  border: 5px;
+  border-color: #9400D3;
+  width: 100px;
+  background: whitesmoke;
+  color: #9400D3;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  cursor: pointer;
+}
+:root {
+  --background-color: #121212;
+  --input-color: whitesmoke;
+  --text-color: #F5F5F5;
+  --main-font-size: 15px;
+  --padding: 2rem;
+  --margin: 4rem;
+}
 
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--main-font-size);
+}
+
+body {
+  font-family: "Dongle", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 300%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: var(--padding);
+  margin: var(--margin);
+}
+
+button {
+  position: center;
+  border: 5px;
+  border-color: #9400D3;
+  width: 100px;
+  background: whitesmoke;
+  color: #9400D3;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  cursor: pointer;
+}
+:root {
+  --background-color: #121212;
+  --input-color: whitesmoke;
+  --text-color: #F5F5F5;
+  --main-font-size: 15px;
+  --padding: 2rem;
+  --margin: 4rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--main-font-size);
+}
+
+body {
+  font-family: "Dongle", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 300%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: var(--padding);
+  margin: var(--margin);
+}
+
+button {
+  position: center;
+  border: 5px;
+  border-color: #9400D3;
+  width: 100px;
+  background: whitesmoke;
+  color: #9400D3;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  cursor: pointer;
+}
+:root {
+  --background-color: #121212;
+  --input-color: whitesmoke;
+  --text-color: #F5F5F5;
+  --main-font-size: 15px;
+  --padding: 2rem;
+  --margin: 4rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--main-font-size);
+}
+
+body {
+  font-family: "Dongle", sans-serif;
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 300%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: var(--padding);
+  margin: var(--margin);
+}
+
+button {
+  position: center;
+  border: 5px;
+  border-color: #9400D3;
+  width: 100px;
+  background: whitesmoke;
+  color: #9400D3;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  cursor: pointer;
+}
 /*# sourceMappingURL=index.caa67093.css.map */

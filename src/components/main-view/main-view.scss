@@ -1,13 +1,17 @@
-/*.app-container {
-    background-image: linear-gradient(rgb(10, 8, 26), rgb(164, 168, 182));
+.app-container {
+    background-color: #434343;
     height: auto;
-}*/
+}
+
+#logout {
+    color: red;
+}
 
 .col-lg-3 {
     margin-top: 5%;
     height: 585px;
+    max-height: 580px ;
     overflow: hidden;
-    z-index: 9;
     &:hover,
     &:active {
       transform: scale(1.1);
@@ -18,8 +22,8 @@
 
   .card-body {
         color: white;
-        background-color: rgb(10, 8, 26);
-        height: 180px;
+        background-color: rgb(11, 11, 44);
+        height: 170px;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -28,8 +32,10 @@
 
   .h5 {
       font-size: 1.1rem !important;
+      max-height: 10px;
   }
 
-  .card-img {
-      min-height: 380px;
+  .card-img-top {
+      min-height: 370px;
+      max-height: 350px;
   }

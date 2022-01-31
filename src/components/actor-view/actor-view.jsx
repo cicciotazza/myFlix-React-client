@@ -14,7 +14,6 @@ export function Actorview(props) {
       <div className="actor-name">
         <span className="label">Name: </span>
         <span className="value">{actor.Name}</span>
-
       </div>
       <div className="actor-bio">
         <span className="label">Biography: </span>

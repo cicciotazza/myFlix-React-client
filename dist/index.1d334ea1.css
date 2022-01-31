@@ -36,21 +36,35 @@ form {
   display: flex;
   justify-content: space-evenly;
 }
+.Card-Text {
+  font-size: 65%;
+}
 
+.Info-Card {
+  margin-top: -1rem;
+}
 .movie-poster img {
   height: 300px;
   width: 200px;
 }
-.genre-view {
+.genre-name {
+  margin-top: 20%;
+  background-color: silver;
+  color: white;
+}
+
+.genre-description {
   color: white;
 }
 .actor-view {
   color: grey;
 }
-.director-view {
-  color: grey;
-}
 
+.navbar-menu {
+  font-family: "Dongle", sans-serif;
+  background-color: white;
+  margin-top: 0%;
+}
 .form-title {
   color: white;
 }
@@ -60,7 +74,15 @@ form {
   justify-content: space-evenly;
 }
 .UserView {
-  color: grey;
+  color: white;
+}
+
+.profileContent {
+  margin-top: 15%;
+}
+
+.favorite-Movies-title {
+  margin-top: 8%;
 }
 .app-container {
   background-color: #434343;
@@ -73,8 +95,8 @@ form {
 
 .col-lg-3 {
   margin-top: 5%;
-  height: 585px;
-  max-height: 580px;
+  height: 550px;
+  max-height: 600px;
   overflow: hidden;
   transition: 0.4s ease-in-out;
 }
@@ -102,11 +124,8 @@ form {
   min-height: 370px;
   max-height: 350px;
 }
-* {
-  background-color: #434343;
-  box-sizing: border-box;
+.my-flix {
   font-family: "Dongle", sans-serif;
-  color: wheat;
-  margin-top: 3%;
+  margin-top: 3rem;
 }
 /*# sourceMappingURL=index.1d334ea1.css.map */

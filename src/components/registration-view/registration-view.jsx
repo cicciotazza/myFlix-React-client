@@ -2,28 +2,28 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import axios from 'axios'
 
-import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
+import { Button, Card, CardGroup, Col,  Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 import './registration-view.scss';
 
 // { useState } Reat Hook  https://reactjs.org/docs/hooks-state.html
 export function RegistrationView(props) {
-  const [username, setUsername] = useState("");
-  const [name, setName] = useState("");
-  const [password, setPassword] = useState("");
-  const [email, setEmail] = useState("");
-  const [birthday, setBirthday] = useState("");
+  const [userName, setuserName] = useState("");
+  const [password, setpassword] = useState("");
+  const [email, setemail] = useState("");
+  const [Birthday, setBirthday] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(username, name, password, email, birthday);
+    console.log(userName, password, email, Birthday);
     axios.post('https://herokumyflixdb.herokuapp.com/users', {
-      Username: username,
-      Name: name,
-      Password: password,
-      Email: email,
-      Birthday: birthday
+      //equivalent to the Json format for Postman
+      userName: userName,
+      password: password,
+      email: email,
+      Birthday: Birthday
     })
       .then(response => {
         const data = response.data;
@@ -38,28 +38,23 @@ export function RegistrationView(props) {
   return (
     <div className="registration">
       <Router>
-
         <Form>
           <h1 className="form-title">Registration</h1>
-          <Form.Group controlId="registration-Username">
+          <Form.Group controlId="registration-userName">
             <Form.Label>Username:</Form.Label>
-            <Form.Control className="username" value={username} type="text" placeholder="Create Username" onChange={e => setUsername(e.target.value)}></Form.Control>
+            <Form.Control className="userName" value={userName} type="text" placeholder="Create Username" onChange={e => setuserName(e.target.value)}></Form.Control>
           </Form.Group>
-          <Form.Group controlId="registration-Password">
+          <Form.Group controlId="registration-password">
             <Form.Label>Password:</Form.Label>
-            <Form.Control className="password" value={password} type="text" placeholder="Create Password" onChange={e => setPassword(e.target.value)}></Form.Control>
+            <Form.Control className="password" value={password} type="text" placeholder="Create Password" onChange={e => setpassword(e.target.value)}></Form.Control>
           </Form.Group>
-          <Form.Group controlId="registration-Name">
-            <Form.Label>Name:</Form.Label>
-            <Form.Control className="name" value={name} type="text" placeholder="Enter Name" onChange={e => setName(e.target.value)}></Form.Control>
-          </Form.Group>
-          <Form.Group controlId="registration-Email">
+          <Form.Group controlId="registration-email">
             <Form.Label>Email:</Form.Label>
-            <Form.Control className="email" value={email} type="email" placeholder="Enter Email" onChange={e => setEmail(e.target.value)}></Form.Control>
+            <Form.Control className="email" value={email} type="email" placeholder="Enter Email" onChange={e => setemail(e.target.value)}></Form.Control>
           </Form.Group>
           <Form.Group controlId="registration-Birthday">
             <Form.Label>Birthday:</Form.Label>
-            <Form.Control className="birthday" value={birthday} type="date" placeholder="Enter Birthday" onChange={e => setBirthday(e.target.value)}></Form.Control>
+            <Form.Control className="Birthday" value={Birthday} type="date" placeholder="Enter Birthday" onChange={e => setBirthday(e.target.value)}></Form.Control>
           </Form.Group>
 
           <div className="buttons-registration">
@@ -74,11 +69,12 @@ export function RegistrationView(props) {
 
 RegistrationView.propTypes = {
   register: PropTypes.shape({
-    username: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    userName: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
-    birthday: PropTypes.string.isRequired,
+    Birthday: PropTypes.string.isRequired,
   }),
   onRegistration: PropTypes.func.isRequired,
 };
+
+export default RegistrationView;

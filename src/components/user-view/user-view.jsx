@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import { MovieCard } from '../movie-card/movie-card';
 
-import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
+import { Button, Card, CardGroup, Col, Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
 
 import './user-view.scss';
 
@@ -10,11 +10,11 @@ export class Userview extends React.Component {
   constructor() {
     super();
     this.state = {
-      username: null,
+      userName: null,
       password: null,
       email: null,
-      birthday: null,
-      favorites: [],
+      Birthday: null,
+      FavoriteMovies: [],
     };
   }
 
@@ -22,14 +22,13 @@ export class Userview extends React.Component {
     this.props.getUser()
   }
 
-  onRemoveFavorite = (e, movie) => {
-    const username = localStorage.getItem('user');
-    console.log(username)
+onRemoveFavorite = (e, movie) => {
+    const userName = localStorage.getItem('userName');
+    console.log(userName)
     const token = localStorage.getItem('token');
     console.log(this.props)
 
-    axios.delete(`https://herokumyflixdb.herokuapp.com/users/:Username/movies/:MovieID/${user}/movies/${_id}`,
-      //favorites/delete/${username}/movies/${movie._id}`,
+    axios.delete(`https://herokumyflixdb.herokuapp.com/users/${user}/movies/${_id}`,
       { headers: { Authorization: `Bearer ${token}` } }
     )
       .then((response) => {
@@ -42,18 +41,17 @@ export class Userview extends React.Component {
       });
   }
 
-  deleteUser() {
-
+  deleteuserName() {
     const answer = window.confirm("Do you really want to delete your account permanently?");
     if (answer) {
       const token = localStorage.getItem("token");
-      const user = localStorage.getItem("user");
-      axios.delete(`https://herokumyflixdb.herokuapp.com/user/:Username/${user}`,
+      const userName = localStorage.getItem("userName");
+      (`https://herokumyflixdb.herokuapp.com/users/${userName}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
         .then(() => {
-          alert(user + " has been deleted.");
-          localStorage.removeItem('user');
+          alert(userName + " has been deleted.");
+          localStorage.removeItem('userName');
           localStorage.removeItem('token');
           window.location.pathname = "/";
         })
@@ -65,15 +63,13 @@ export class Userview extends React.Component {
 
   editUser(e) {
     e.preventDefault();
-    const username = localStorage.getItem('user');
+    const userName = localStorage.getItem('userName');
     const token = localStorage.getItem('token');
-
-    axios.put(`https://herokumyflixdb.herokuapp.com/user/:Username/${username}`,
+    axios.put(`https://herokumyflixdb.herokuapp.com/user/${userName}`,
       {
-        Name: this.state.Name,
-        Username: this.state.Username,
-        Password: this.state.Password,
-        Email: this.state.Email,
+        userName: this.state.userName,
+        password: this.state.password,
+        email: this.state.email,
         Birthday: this.state.Birthday
       },
       {
@@ -81,16 +77,15 @@ export class Userview extends React.Component {
       })
       .then((response) => {
         this.setState({
-          Name: response.data.Name,
-          Username: response.data.Username,
-          Password: response.data.Password,
-          Email: response.data.Email,
+          userName: response.data.userName,
+          password: response.data.password,
+          email: response.data.email,
           Birthday: response.data.Birthday
         });
-        localStorage.setItem('user', response.data.Username);
+        localStorage.setItem('userName', response.data.userName);
         const data = response.data;
         console.log(data);
-        console.log(this.state.Username);
+        console.log(this.state.userName);
         alert('Profile updated');
         window.location.reload();
       })
@@ -99,20 +94,16 @@ export class Userview extends React.Component {
       })
   }
 
-  setName(value) {
-    this.state.Name = value;
+  setuserName(value) {
+    this.state.userName = value;
   }
 
-  setUsername(value) {
-    this.state.Username = value;
+  setpassword(value) {
+    this.state.password = value;
   }
 
-  setPassword(value) {
-    this.state.Password = value;
-  }
-
-  setEmail(value) {
-    this.state.Email = value;
+  setemail(value) {
+    this.state.email = value;
   }
 
   setBirthday(value) {
@@ -120,46 +111,40 @@ export class Userview extends React.Component {
   }
 
   render() {
-    const { name, username, email, birthday, favorites } = this.props
+    const { userName, email, Birthday, FavoriteMovies } = this.props
     console.log(this.props)
 
     return (
-      <Container className="UserView">
+      <Container fluid className="UserView">
         <Row className="justify-content-md-center">
           <Col className="user-info">
             <div className="profileContent">
-              <h1>MY PROFILE</h1>
+              <h1>Account settings</h1>
             </div>
-            <h4>Name: {name}</h4>
-            <h4>Username: {username}</h4>
-            <h4>Password: *******</h4>
-            <h4>Email: {email}</h4>
-            <h4>Birthday: {birthday}</h4>
+            <h4>userName: {userName}</h4>
+            <h4>password: *******</h4>
+            <h4>email: {email}</h4>
+            <h4>Birthday: {Birthday}</h4>
           </Col>
         </Row>
         <div className="profileInformation">
-          <Form className="formDisplay" onSubmit={(e) => this.editUser(e)}>
+          <Form className="formDisplay" onSubmit={(e) => this.edituserName(e)}>
             <div>
-              <h3>EDIT PROFILE</h3>
+              <h3>Edit Profile</h3>
             </div>
             <Form.Group>
-              Name
-              <Form.Control type='text' name="Name" placeholder="New Name" onChange={(e) => this.setName(e.target.value)} />
-            </Form.Group>
-
-            <Form.Group>
               Username
-              <Form.Control type='text' name="Username" placeholder="New Username" onChange={(e) => this.setUsername(e.target.value)} required />
+              <Form.Control type='text' name="userName" placeholder="New userName" onChange={(e) => this.setuserName(e.target.value)} required />
             </Form.Group>
 
             <Form.Group>
               Password
-              <Form.Control type='password' name="Password" placeholder="New Password" onChange={(e) => this.setPassword(e.target.value)} required />
+              <Form.Control type='password' name="password" placeholder="New password" onChange={(e) => this.setpassword(e.target.value)} required />
 
             </Form.Group>
             <Form.Group>
               Email Address
-              <Form.Control type='email' name="Email" placeholder="New Email" onChange={(e) => this.setEmail(e.target.value)} required />
+              <Form.Control type='email' name="email" placeholder="New email" onChange={(e) => this.setemail(e.target.value)} required />
 
             </Form.Group>
             <Form.Group>
@@ -168,19 +153,21 @@ export class Userview extends React.Component {
 
             </Form.Group>
             <div className="marginSpacer">
-              <Button variant="success" type="submit" >Update</Button>
+              <Col className="acc-btns mt-1">
+                <Row>
+                  <Button variant="success" size="lg" type="submit" >Update</Button>
+                </Row>
+                <Row>
+                  <Button size="md" variant="outline-danger" size="lg" type="submit" onClick={() => this.deleteuserName()} >Delete Account</Button>
+                </Row>
+              </Col>
             </div>
           </Form>
         </div>
-        <Row>
-          <Col className="acc-btns mt-1">
-            <Button size="md" variant="outline-danger" type="submit" ml="4" onClick={() => this.deleteUser()} >Delete Account</Button>
-          </Col>
-        </Row>
 
         <h3 className="favorite-Movies-title">Favorite Movies</h3>
         <Row className="favoriteMovied-col">
-          {favorites && favorites.map((movie) => (
+          {FavoriteMovies && FavoriteMovies.map((movie) => (
 
             <Col sm={6} md={4} lg={4} key={movie._id}>
               <div className="favoriteMoviediv" >
@@ -190,7 +177,6 @@ export class Userview extends React.Component {
                 </Button>
               </div>
             </Col>
-
           ))
           }
         </Row>

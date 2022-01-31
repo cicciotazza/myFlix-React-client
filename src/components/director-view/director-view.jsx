@@ -14,7 +14,6 @@ export function DirectorView(props) {
       <div className="director-name">
         <span className="label">Name: </span>
         <span className="value">{director.Name}</span>
-
       </div>
       <div className="director-bio">
         <span className="label">Biography: </span>
@@ -27,8 +26,6 @@ export function DirectorView(props) {
       <Link to={`/`}>
         <Button className='returnButton' variant='dark'>Return to Movie List</Button>
       </Link>
-
-
     </div>
 
   )

@@ -3,7 +3,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
-import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
+import { Button, Card, CardGroup, Col,  Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
 
 import "./movie-view.scss";
 
@@ -15,10 +15,10 @@ export class MovieView extends React.Component {
 
   addFavoriteMovie() {
     const token = localStorage.getItem('token');
-    const username = localStorage.getItem('user');
+    const userName = localStorage.getItem('userName');
 
-    axios.post(`https://https://herokumyflixdb.herokuapp.com//users/:Username/favoriteMovies/:MovieID${this.props.movie._id}`, {}, {
-      headers: { Authorization: `Bearer ${token}` },
+    axios.post('https://herokumyflixdb.herokuapp.com/users/${userName}/favoriteMovies/${this.props.movie.Title}', {}, {  
+    headers: { Authorization: `Bearer ${token}` },
       method: 'POST'
     })
       .then(response => {
@@ -32,7 +32,6 @@ export class MovieView extends React.Component {
   render() {
     const { movie, onBackClick } = this.props;
     return (
-
       <div className="movie-view">
         <div className="movie-poster">
           <img src={movie.ImagePath} />
@@ -47,23 +46,17 @@ export class MovieView extends React.Component {
         </div>
         <div className="movie-genre">
           <span className="label">Genre: </span>
-          <Link to={`/genres/${movie.Genre.Name}`} className="value">{movie.Genre.Name}</Link>
-
+          <span className="value">{movie.Genre.Name}</span>
         </div>
         <div className="movie-director">
           <span className="label">Director: </span>
-          <Link to={`/directors/${movie.Director.Name}`} className="value">{movie.Director.Name}</Link>
-
+          <span className="value">{movie.Director.Name}</span>
         </div>
         <div className="movie-actors">
           <span className="label">Actors: </span>
-
-
-          {movie.Actors.map((actor) => (<Link key={actor.Name} to={`/actors/${actor.Name}`} className="value">{actor.Name}
-          </Link>)).reduce((prev, curr) => [prev, ", ", curr])}
+          <span className="value">{movie.Actors.map(actor => actor.Name).join(", ")}</span>
         </div>
         <button onClick={() => { onBackClick(null); }}>Back</button>
-        <Button variant="outline-primary" className="btn-outline-primary" value={movie._id} onClick={(e) => this.addFavoriteMovie(e, movie)}>Add to Favorites</Button>
 
       </div>
     );
@@ -74,12 +67,10 @@ MovieView.propTypes = {
   movieData: PropTypes.shape({
     Title: PropTypes.string.isRequired,
     Description: PropTypes.string.isRequired,
-    ImgPath: PropTypes.string.isRequired,
     Genre: PropTypes.array.isRequired,
+    ImagePath: PropTypes.string.isRequired,
     Director: PropTypes.array.isRequired,
     Actors: PropTypes.array.isRequired,
     Featured: PropTypes.bool.isRequired,
   }),
 };
-
-

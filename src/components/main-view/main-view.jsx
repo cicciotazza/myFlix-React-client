@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from "prop-types";
 
-import { Form, Button, Container, Row, Col, Card, CardGroup } from 'react-bootstrap';
+import { Button, Card, CardGroup, Col,  Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import './main-view.scss';
@@ -53,11 +53,11 @@ export default class MainView extends React.Component {
   onLoggedIn(authData) {
     console.log(authData);
     this.setState({
-      user: authData.user.Username
+      user: authData.user.userName
     });
 
     localStorage.setItem('token', authData.token);
-    localStorage.setItem('user', authData.user.Username);
+    localStorage.setItem('user', authData.user.userName);
     this.getMovies(authData.token);
   }
 
@@ -84,20 +84,19 @@ export default class MainView extends React.Component {
   }
 
   getUser() {
-    const username = localStorage.getItem("user");
+    const userName = localStorage.getItem("user");
     const token = localStorage.getItem("token");
     axios
-      .get(`https://herokumyflixdb.herokuapp.com/users${username}`, {
+      .get(`https://herokumyflixdb.herokuapp.com/users/${userName}`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => {
         this.setState({
-          name: response.data.Name,
-          username: response.data.Username,
-          password: response.data.Password,
-          email: response.data.Email,
-          birthday: response.data.Birthday,
-          favorites: response.data.Favorites
+          userName: response.data.userName,
+          password: response.data.password,
+          email: response.data.email,
+          Birthday: response.data.Birthday,
+          FavoriteMovies: response.data.FavoriteMovies
         });
       })
       .catch(function (error) {
@@ -105,28 +104,16 @@ export default class MainView extends React.Component {
       });
   }
 
-
-
-
   render() {
-    const { movies, name, user, username, password, email, birthday, favorites } = this.state;
-
-
+    const { movies, user, userName, password, email, Birthday, FavoriteMovies } = this.state;
 
     return (
-
-
       <Router>
-
         <Route exact path="/" render={() => {
           console.log('login')
           if (user) return <Navbar user={user}></Navbar>
-
           if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
-
-
         }} />
-
         {/* Register view */}
         <Route exact path="/register" render={() => {
           if (user) return <Redirect to="/" />
@@ -135,11 +122,7 @@ export default class MainView extends React.Component {
             />
           </Col>
         }} />
-
-
-
         <div className="main-view">
-
           <Row className="main-view justify-content-md-center">
             <Route exact path="/" render={() => {
               return movies.map(m => (
@@ -156,7 +139,6 @@ export default class MainView extends React.Component {
                   onBackClick={() => history.goBack()} />
               </Col>
             }} />
-
 
             <Route path="/genres/:name" render={({ match, history }) => {
               if (!user)
@@ -217,8 +199,8 @@ export default class MainView extends React.Component {
                   <Col>
                     <Navbar user={user}></Navbar>
                     <Userview
-                      username={username} password={password} email={email} name={name}
-                      birthday={birthday} favorites={favorites} movies={movies}
+                      userName={userName} password={password} email={email}
+                      Birthday={Birthday} FavoriteMovies={FavoriteMovies} movies={movies}
                       getUser={this.getUser}
                       onBackClick={() => history.goBack()} removeMovie={(_id) => this.onRemoveFavorite(_id)} />
                   </Col>
@@ -230,5 +212,3 @@ export default class MainView extends React.Component {
     );
   }
 }
-
-

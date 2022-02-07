@@ -4,15 +4,15 @@ import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import axios from 'axios';
 
-import { Button, Card, CardGroup, Col,  Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
+import { Button, Card, CardGroup, Col, Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import './login-view.scss';
 
 // array of paired values destructured
 export function LoginView(props) {
-  const [ userName, setuserName ] = useState('');
-  const [ password, setpassword ] = useState('');
+  const [userName, setuserName] = useState('');
+  const [password, setpassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,8 +21,6 @@ export function LoginView(props) {
     axios.post('https://herokumyflixdb.herokuapp.com/login', {
       userName: userName,
       password: password
-      //Username: userName,
-      //Password: password
     })
       .then(response => {
         const data = response.data;

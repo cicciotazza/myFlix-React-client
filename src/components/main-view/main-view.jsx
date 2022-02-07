@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from "prop-types";
 
-import { Button, Card, CardGroup, Col,  Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
+import { Button, Card, CardGroup, Col, Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
 import './main-view.scss';
@@ -15,7 +15,6 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from "../genre-view/genre-view";
-import { Actorview } from '../actor-view/actor-view';
 import { DirectorView } from '../director-view/director-view';
 import { Navbar } from '../navbar-view/navbar-view';
 import { Userview } from '../user-view/user-view';
@@ -114,7 +113,7 @@ export default class MainView extends React.Component {
           if (user) return <Navbar user={user}></Navbar>
           if (!user) return <LoginView onLoggedIn={user => this.onLoggedIn(user)} />;
         }} />
-        {/* Register view */}
+        {/* Registration view */}
         <Route exact path="/register" render={() => {
           if (user) return <Redirect to="/" />
           return <Col>
@@ -154,7 +153,6 @@ export default class MainView extends React.Component {
               </Col>
             }} />
 
-
             <Route path="/directors/:name" render={({ match, history }) => {
               if (!user)
                 return (
@@ -166,26 +164,11 @@ export default class MainView extends React.Component {
               if (movies.length === 0) return <div className="main-view" />;
               return <Col md={8}>
                 <Navbar user={user}></Navbar>
-                <DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
+                <DirectorView Director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
               </Col>
             }} />
 
-            <Route path="/actors/:name" render={({ match, history }) => {
-              if (!user)
-                return (
-                  <Col>
-                    <LoginView onLoggedIn={(user) => this.onLoggedIn(user)} />
-                  </Col>
-                );
-
-              if (movies.length === 0) return <div className="main-view" />;
-              return <Col md={8}>
-                <Navbar user={user}></Navbar>
-                <Actorview actor={movies.find(m => m.Actor.Name === match.params.name).Actor} onBackClick={() => history.goBack()} />
-              </Col>
-            }} />
-
-            {/* Path to Profile view  */}
+            {/* Profile view  */}
             <Route path="/user" render={() => {
               if (!user)
                 return (
@@ -202,7 +185,7 @@ export default class MainView extends React.Component {
                       userName={userName} password={password} email={email}
                       Birthday={Birthday} FavoriteMovies={FavoriteMovies} movies={movies}
                       getUser={this.getUser}
-                      onBackClick={() => history.goBack()} removeMovie={(_id) => this.onRemoveFavorite(_id)} />
+                      onBackClick={() => history.goBack()} removeMovie={(_id) => this.onRemoveFavoriteMovies(_id)} />
                   </Col>
                 </>)
             }} />

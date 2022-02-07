@@ -1,32 +1,41 @@
 import React from 'react';
 import axios from 'axios';
+import { Button, Card, CardGroup, Col, Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { Row, Col, Button } from 'react-bootstrap';
 
 import "./director-view.scss";
 
 export function DirectorView(props) {
-  const { director } = props;
-  console.log(director);
-
+  const { Director } = props;
+  console.log(Director);
   return (
-    <div className="director-view">
-      <div className="director-name">
-        <span className="label">Name: </span>
-        <span className="value">{director.Name}</span>
-      </div>
-      <div className="director-bio">
-        <span className="label">Biography: </span>
-        <span className="value">{director.Bio}</span>
-      </div>
-      <div className="director-birthyear">
-        <span className="label">Year of Birth: </span>
-        <span className="value">{director.Born}</span>
-      </div>
-      <Link to={`/`}>
-        <Button className='returnButton' variant='dark'>Return to Movie List</Button>
-      </Link>
-    </div>
 
+    <Container fluid>
+      <Row className="director-view">
+        <Col>
+          <div>
+            <div className="director-name">
+              <span className="label">Name: </span>
+              <span className="value">{Director.Name}</span>
+            </div>
+            <div className="director-bio">
+              <span className="label">Biography: </span>
+              <span className="value">{Director.Bio}</span>
+            </div>
+            <div className="director-birthday">
+              <span className="label">Year of Birth: </span>
+              <span className="value">{Director.Birthday}</span>
+            </div>
+            <div className="director-death">
+              <span className="label">Year of Death: </span>
+              <span className="value">{Director.Death}</span>
+            </div>
+            <Link to={`/`}>
+              <Button className='returnButton' variant='dark'>Return to home page</Button>
+            </Link>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   )
 }

@@ -169,7 +169,7 @@ export default class MainView extends React.Component {
             }} />
 
             {/* Profile view  */}
-            <Route path="/user" render={() => {
+            <Route path="/user/:username" render={() => {
               if (!user)
                 return (
                   <Col>

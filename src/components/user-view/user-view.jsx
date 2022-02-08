@@ -25,10 +25,10 @@ export class Userview extends React.Component {
     console.log(userName)
     const token = localStorage.getItem('token');
     console.log(this.props)
-    {/*   Postman --> app.delete("/users/:userName/movies/:title",      */ }
-    axios.delete(`https://herokumyflixdb.herokuapp.com/users/${user}/movies/${_id}`,
-      { headers: { Authorization: `Bearer ${token}` } }
-    )
+    axios.delete
+      (`https://herokumyflixdb.herokuapp.com/users/${userName}/movies/${movie._id}`,
+        { headers: { Authorization: `Bearer ${token}` } }
+      )
       .then((response) => {
         console.log(response);
         alert("Movie was removed");
@@ -44,8 +44,8 @@ export class Userview extends React.Component {
     if (answer) {
       const token = localStorage.getItem("token");
       const user = localStorage.getItem("user");
-      {/*    Postman --> app.delete("/users/:userName",   */ }
       axios.delete(`https://herokumyflixdb.herokuapp.com/users/${user}`,
+
         { headers: { Authorization: `Bearer ${token}` } }
       )
         .then(() => {
@@ -64,7 +64,6 @@ export class Userview extends React.Component {
     e.preventDefault();
     const userName = localStorage.getItem('user');
     const token = localStorage.getItem('token');
-    {/*    Postman --> app.put("/users/:Username",    */ }
     axios.put(`https://herokumyflixdb.herokuapp.com/users/${userName}`,
       {
         userName: this.state.userName,

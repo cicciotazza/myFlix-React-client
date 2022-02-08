@@ -12,17 +12,17 @@ export class MovieView extends React.Component {
     super(props);
   }
 
-  addFavoriteMovies() {
+  addFavoriteMovies(movie) {
     const token = localStorage.getItem('token');
     const userName = localStorage.getItem('user');
 
-    axios.post
-    {/*             Postman --> app.post("/users/:userName/favoriteMovies/:MovieID", */ }
-    (`https://herokumyflixdb.herokuapp.com/users/${userName}/favoriteMovies/${movie._id}`, {}, {
+    console.log(movie, `https://herokumyflixdb.herokuapp.com/users/${userName}/favoriteMovies/${movie._id}`)
+
+    axios.post(`https://herokumyflixdb.herokuapp.com/users/${userName}/favoriteMovies/${movie._id}`, {}, {
       headers: { Authorization: `Bearer ${token}` },
       method: 'POST'
     })
-      .then(response => {
+      .then((response) => {
         alert(`Added to your list of Favorites`)
       })
       .catch(function (error) {
@@ -57,7 +57,7 @@ export class MovieView extends React.Component {
           <br></br>
           <Button onClick={() => { onBackClick(null); }} variant="secondary" size="lg">Return to home page</Button>
           <br></br>
-          <Button variant="outline-warning" size='lg' className="btn-outline-warning" value={movie._id} onClick={(e) => this.addFavoriteMovies(e, movie)}>Add to list of Favorites</Button>
+          <Button variant="outline-warning" size='lg' className="btn-outline-warning" value={movie._id} onClick={() => this.addFavoriteMovies(movie)}>Add to list of Favorites</Button>
         </div>
       </div>
     );

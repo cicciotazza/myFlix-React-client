@@ -18,9 +18,9 @@ export class Navbar extends React.Component {
   };
 
   render() {
-    const { userName } = this.props
+    const { user } = this.props
     const movies = `/`;
-    const profile = `/user/${userName}`;
+    const profile = `/user/${user}`;
 
     return (
 

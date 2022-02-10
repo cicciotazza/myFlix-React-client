@@ -1,0 +1,45 @@
+.app-container {
+    background-color: #434343;
+    height: auto;
+}
+
+#logout {
+    color: red;
+}
+
+.col-lg-3 {
+    margin-top: 5%;
+    height: 550px;
+    max-height: 600px ;
+    overflow: hidden;
+    &:hover,
+    &:active {
+      transform: scale(1.1);
+      cursor: pointer;
+    }
+    transition: .4s ease-in-out; 
+  }
+
+  .card-body {
+        color: white;
+        background-color: rgb(11, 11, 44);
+        height: 170px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+  }
+
+  .h5 {
+      font-size: 1.1rem !important;
+      max-height: 10px;
+  }
+
+  .card-img-top {
+      min-height: 370px;
+      max-height: 350px;
+  }
+
+  .col-md-4 {
+    margin-top: 25px;
+}

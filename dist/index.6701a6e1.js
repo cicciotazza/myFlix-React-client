@@ -41026,12 +41026,12 @@ class Userview extends _reactDefault.default.Component {
     componentDidMount() {
         this.props.getUser();
     }
-    onRemoveFavoriteMovies = (e, movie)=>{
+    onRemoveFavoriteMovies = (e, movieID)=>{
         const userName = localStorage.getItem('user');
         console.log(userName);
         const token = localStorage.getItem('token');
         console.log(this.props);
-        _axiosDefault.default.delete(`https://herokumyflixdb.herokuapp.com/users/${userName}/movies/${movie._id}`, {
+        _axiosDefault.default.delete(`https://herokumyflixdb.herokuapp.com/users/${userName}/movies/${movieID}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }

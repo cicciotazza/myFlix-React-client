@@ -20,13 +20,13 @@ export class Userview extends React.Component {
     this.props.getUser()
   }
 
-  onRemoveFavoriteMovies = (e, movie) => {
+  onRemoveFavoriteMovies = (e, movieID) => {
     const userName = localStorage.getItem('user');
     console.log(userName)
     const token = localStorage.getItem('token');
     console.log(this.props)
     axios.delete
-      (`https://herokumyflixdb.herokuapp.com/users/${userName}/movies/${movie._id}`,
+      (`https://herokumyflixdb.herokuapp.com/users/${userName}/movies/${movieID}`,
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {

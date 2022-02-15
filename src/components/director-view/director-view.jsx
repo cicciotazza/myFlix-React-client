@@ -1,5 +1,4 @@
 import React from 'react';
-import axios from 'axios';
 import { Button, Card, CardGroup, Col, Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -7,7 +6,7 @@ import "./director-view.scss";
 
 export function DirectorView(props) {
   const { Director } = props;
-  console.log(Director);
+  console.log(Director, 'director');
   return (
 
     <Container fluid>

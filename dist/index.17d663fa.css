@@ -53,11 +53,11 @@
 .app-container {
   display: grid;
   justify-content: center;
-  padding-bottom: 500px;
+  padding-bottom: 1000px;
 }
 
 .form-title {
-  color: #434343;
+  color: #ffffff;
   text-align: center;
   display: block;
   margin-left: auto;
@@ -87,6 +87,13 @@ form {
 .buttons-login {
   display: flex;
   justify-content: space-evenly;
+}
+.Card-Text {
+  font-size: 65%;
+}
+
+.Info-Card {
+  margin-top: -1rem;
 }
 .movie-poster img {
   margin: auto;
@@ -118,7 +125,7 @@ form {
   margin-bottom: 10%;
 }
 
-.genre-description {
+.director-description {
   color: white;
 }
 
@@ -126,17 +133,16 @@ form {
   margin-top: 5%;
   margin-bottom: 5%;
 }
+
+.director-name {
+  margin-top: 20%;
+  background-color: silver;
+  color: white;
+}
 .navbar-menu {
   font-family: "Dongle", sans-serif;
   background-color: white;
   margin-top: 0%;
-}
-.Card-Text {
-  font-size: 65%;
-}
-
-.Info-Card {
-  margin-top: -1rem;
 }
 .UserView {
   color: white;
@@ -149,7 +155,6 @@ form {
 .favorite-Movies-title {
   margin-top: 8%;
 }
-
 .my-flix {
   font-family: "Dongle", sans-serif;
   margin-top: 3rem;

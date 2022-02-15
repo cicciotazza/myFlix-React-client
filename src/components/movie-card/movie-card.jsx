@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
 import { Link } from "react-router-dom";
 
-import { Button, Card, CardGroup, Col, Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
+import { Button, Card, Col, Container, Container, Row } from 'react-bootstrap';
 
 import './movie-card.scss';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Button, Container } from 'react-bootstrap';
 
 import "./genre-view.scss";
 
@@ -8,7 +8,7 @@ export function GenreView(props) {
   const { genre } = props
   console.log(genre, 'genre')
   return (
-    <>
+    <Container fluid>
       <Row className="genre-view">
         <Col>
           <div className="genre-name">
@@ -24,6 +24,9 @@ export function GenreView(props) {
           </Link>
         </Col>
       </Row>
-    </>
+    </Container>
+
+
+
   )
 }

@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { setFilter } from '../../actions/actions';
-
-import { Button, Card, CardGroup, Col, Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
+import { Form } from 'react-bootstrap';
 
 import './visibility-filter-input.scss'
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { MovieCard } from '../movie-card/movie-card';
 
-import { Button, Card, CardGroup, Col, Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 import './movies-list.scss';
 

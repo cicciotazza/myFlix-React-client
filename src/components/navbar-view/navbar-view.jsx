@@ -1,7 +1,6 @@
 import React from 'react'
 
-import { Button, Card, CardGroup, Col, Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Container, Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
 
 import './navbar-view.scss'
 
@@ -44,6 +43,7 @@ export class Navbar extends React.Component {
                 <NavDropdown.Item href="directors/Gideon%20Raff">Gideon Raff</NavDropdown.Item>
                 <NavDropdown.Item href="directors/Mark%20Cendrowski">Mark Cendrowski</NavDropdown.Item>
               </NavDropdown>
+
               <NavDropdown title="Genres" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="genres/Crime">Crime</NavDropdown.Item>
                 <NavDropdown.Item href="genres/Fantasy">Fantasy</NavDropdown.Item>
@@ -52,6 +52,7 @@ export class Navbar extends React.Component {
                 <NavDropdown.Item href="genres/History">History</NavDropdown.Item>
                 <NavDropdown.Item href="genres/Espionage">Espionage</NavDropdown.Item>
               </NavDropdown>
+
               <Nav.Link id="Account" href={profile}>My Profile</Nav.Link>
               <Nav.Link id="logout" onClick={() => { this.onLoggedOut() }}>Logout</Nav.Link>
             </Nav>

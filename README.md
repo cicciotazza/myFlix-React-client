@@ -13,6 +13,8 @@ Learn how to use JavaScript to build powerful interfaces for server-side systems
 ## Creator
 - [Github](https://github.com/cicciotazza)
 - Linkedin (to be filled)
+  
+  
 ## Tools used
 - Parcel
 - Visual Studio Code

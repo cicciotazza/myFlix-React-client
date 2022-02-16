@@ -40748,7 +40748,7 @@ class Navbar extends _reactDefault.default.Component {
         const { user  } = this.props;
         const movies = `/`;
         const profile = `/user/${user}`;
-        return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar, {
+        return(/*#__PURE__*/ _jsxRuntime.jsx(Navbar, {
             bg: "light",
             expand: "lg",
             __source: {
@@ -40764,7 +40764,7 @@ class Navbar extends _reactDefault.default.Component {
                 },
                 __self: this,
                 children: [
-                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
+                    /*#__PURE__*/ _jsxRuntime.jsx(Navbar.Brand, {
                         href: "/",
                         __source: {
                             fileName: "src/components/navbar-view/navbar-view.jsx",
@@ -40780,7 +40780,7 @@ class Navbar extends _reactDefault.default.Component {
                             children: "MyFlix REACT"
                         })
                     }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Toggle, {
+                    /*#__PURE__*/ _jsxRuntime.jsx(Navbar.Toggle, {
                         "aria-controls": "basic-navbar-nav",
                         __source: {
                             fileName: "src/components/navbar-view/navbar-view.jsx",
@@ -40788,7 +40788,7 @@ class Navbar extends _reactDefault.default.Component {
                         },
                         __self: this
                     }),
-                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Collapse, {
+                    /*#__PURE__*/ _jsxRuntime.jsx(Navbar.Collapse, {
                         className: "justify-content-end",
                         id: "responsive-navbar-nav",
                         __source: {

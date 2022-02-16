@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Container, Nav, NavDropdown } from 'react-bootstrap';
 
 import './navbar-view.scss'
 

@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import PropTypes from "prop-types";
 import axios from 'axios';
 
-import { Button, Col, Container, Form, Container, Row } from 'react-bootstrap';
+import { Button, Col, Form, Container, Row } from 'react-bootstrap';
 import { BrowserRouter as Router } from "react-router-dom";
 
 import './login-view.scss';

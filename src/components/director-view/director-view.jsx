@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, CardGroup, Col, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
+import { Button, Card, CardGroup, Col, Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 import "./director-view.scss";

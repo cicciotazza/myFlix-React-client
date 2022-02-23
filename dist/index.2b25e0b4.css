@@ -1,0 +1,162 @@
+.app-container {
+  background-color: #434343;
+  height: auto;
+}
+
+#logout {
+  color: red;
+}
+
+.col-lg-3 {
+  margin-top: 5%;
+  height: 550px;
+  max-height: 600px;
+  overflow: hidden;
+  transition: 0.4s ease-in-out;
+}
+.col-lg-3:hover, .col-lg-3:active {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.card-body {
+  color: white;
+  background-color: #0b0b2c;
+  height: 170px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.h5 {
+  font-size: 1.1rem !important;
+  max-height: 10px;
+}
+
+.card-img-top {
+  min-height: 370px;
+  max-height: 350px;
+}
+
+.col-md-4 {
+  margin-top: 25px;
+}
+.form-title {
+  color: white;
+}
+
+.buttons-registration {
+  display: flex;
+  justify-content: space-evenly;
+}
+.app-container {
+  display: grid;
+  justify-content: center;
+  padding-bottom: 1000px;
+}
+
+.form-title {
+  color: #ffffff;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 300%;
+}
+
+form {
+  margin-top: 50%;
+}
+
+.form-label {
+  margin-top: 20px;
+  height: 25px;
+  color: white;
+}
+
+.form-control {
+  width: 400px !important;
+}
+
+.btn {
+  padding-top: 10px;
+  margin-top: 30px;
+}
+
+.buttons-login {
+  display: flex;
+  justify-content: space-evenly;
+}
+.Card-Text {
+  font-size: 65%;
+}
+
+.Info-Card {
+  margin-top: -1rem;
+}
+.movie-poster img {
+  margin: auto;
+  height: 400px;
+  width: 300px;
+  border: 3px solid lightblue;
+}
+
+.movie-view {
+  margin-top: 15%;
+  margin: auto;
+  padding: 5%;
+  text-align: center;
+}
+.genre-name {
+  margin-top: 20%;
+  background-color: silver;
+  color: white;
+}
+
+.genre-description {
+  color: white;
+}
+.director-view {
+  margin-top: 10%;
+  background-color: gray;
+  color: white;
+  margin: auto;
+  margin-bottom: 10%;
+}
+
+.director-description {
+  color: white;
+}
+
+.returnButton {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.director-name {
+  margin-top: 20%;
+  background-color: silver;
+  color: white;
+}
+.navbar-menu {
+  font-family: "Dongle", sans-serif;
+  background-color: white;
+  margin-top: 0%;
+}
+.UserView {
+  color: white;
+}
+
+.profileContent {
+  margin-top: 15%;
+}
+
+.favorite-Movies-title {
+  margin-top: 8%;
+}
+.my-flix {
+  font-family: "Dongle", sans-serif;
+  margin-top: 3rem;
+}
+/*# sourceMappingURL=index.2b25e0b4.css.map */

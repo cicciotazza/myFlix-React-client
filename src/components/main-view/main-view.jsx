@@ -3,9 +3,9 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from "prop-types";
 
-import { Button, Card, CardGroup, Col, Container, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
+import { Button, Card, CardGroup, Col, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
-
+brach
 import './main-view.scss';
 
 //LoginView at the top of the code because it will need to get the user details from the MainView

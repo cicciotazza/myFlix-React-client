@@ -3,7 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import PropTypes from "prop-types";
 
-import { Button, Card, CardGroup, Col, Form, Navbar, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
+import { Button, Card, CardGroup, Col, Form, Container, Nav, NavDropdown, Row } from 'react-bootstrap';
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 brach
 import './main-view.scss';
@@ -16,6 +16,7 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from "../genre-view/genre-view";
 import { DirectorView } from '../director-view/director-view';
+import { Navbar } from '../navbar-view/navbar-view';
 import { Userview } from '../user-view/user-view';
 
 export default class MainView extends React.Component {

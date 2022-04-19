@@ -150,6 +150,11 @@ form {
 .favorite-Movies-title {
   margin-top: 8%;
 }
+.navbar-menu {
+  font-family: "Dongle", sans-serif;
+  background-color: white;
+  margin-top: 0%;
+}
 .my-flix {
   font-family: "Dongle", sans-serif;
   margin-top: 3rem;

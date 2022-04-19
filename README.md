@@ -74,3 +74,5 @@ Open webpage and use, `http://localhost:1234/`
 
 **Task08**
 *React Redux*
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1a7be9fc-0dd1-4f7e-8e3d-d056db94a86a/deploy-status)](https://app.netlify.com/sites/cicciotazza-myflix/deploys)

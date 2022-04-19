@@ -22832,7 +22832,6 @@ var _movieCard = require("../movie-card/movie-card");
 var _movieView = require("../movie-view/movie-view");
 var _genreView = require("../genre-view/genre-view");
 var _directorView = require("../director-view/director-view");
-var _navbarView = require("../navbar-view/navbar-view");
 var _userView = require("../user-view/user-view");
 class MainView extends _reactDefault.default.Component {
     constructor(){
@@ -22916,7 +22915,7 @@ class MainView extends _reactDefault.default.Component {
                     path: "/",
                     render: ()=>{
                         console.log('login');
-                        if (user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarView.Navbar, {
+                        if (user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar, {
                             user: user1
                         }, void 0, false, void 0, void 0));
                         if (!user1) return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_loginView.LoginView, {
@@ -22925,7 +22924,7 @@ class MainView extends _reactDefault.default.Component {
                     }
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 111,
+                    lineNumber: 110,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -22942,7 +22941,7 @@ class MainView extends _reactDefault.default.Component {
                     }
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 117,
+                    lineNumber: 116,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -22967,7 +22966,7 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 126,
+                                lineNumber: 125,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -22976,7 +22975,7 @@ class MainView extends _reactDefault.default.Component {
                                     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
                                         md: 8,
                                         children: [
-                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarView.Navbar, {
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar, {
                                                 user: user1
                                             }, void 0, false, void 0, void 0),
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_movieView.MovieView, {
@@ -22989,7 +22988,7 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 134,
+                                lineNumber: 133,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -23006,7 +23005,7 @@ class MainView extends _reactDefault.default.Component {
                                     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
                                         md: 8,
                                         children: [
-                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarView.Navbar, {
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar, {
                                                 user: user1
                                             }, void 0, false, void 0, void 0),
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_genreView.GenreView, {
@@ -23019,7 +23018,7 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 142,
+                                lineNumber: 141,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -23036,7 +23035,7 @@ class MainView extends _reactDefault.default.Component {
                                     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
                                         md: 8,
                                         children: [
-                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarView.Navbar, {
+                                            /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar, {
                                                 user: user1
                                             }, void 0, false, void 0, void 0),
                                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_directorView.DirectorView, {
@@ -23049,7 +23048,7 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 156,
+                                lineNumber: 155,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactRouterDom.Route, {
@@ -23066,7 +23065,7 @@ class MainView extends _reactDefault.default.Component {
                                     return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_jsxDevRuntime.Fragment, {
                                         children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Col, {
                                             children: [
-                                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_navbarView.Navbar, {
+                                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar, {
                                                     user: user1
                                                 }, void 0, false, void 0, void 0),
                                                 /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_userView.Userview, {
@@ -23087,24 +23086,24 @@ class MainView extends _reactDefault.default.Component {
                                 }
                             }, void 0, false, {
                                 fileName: "src/components/main-view/main-view.jsx",
-                                lineNumber: 172,
+                                lineNumber: 171,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/main-view/main-view.jsx",
-                        lineNumber: 125,
+                        lineNumber: 124,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/main-view/main-view.jsx",
-                    lineNumber: 124,
+                    lineNumber: 123,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "src/components/main-view/main-view.jsx",
-            lineNumber: 110,
+            lineNumber: 109,
             columnNumber: 7
         }, this));
     }
@@ -23116,7 +23115,7 @@ exports.default = MainView;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./main-view.scss":"eBaMl","../registration-view/registration-view":"3U8r7","../login-view/login-view":"9YtA0","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../genre-view/genre-view":"4tuA0","../director-view/director-view":"9tpci","../navbar-view/navbar-view":"divrl","../user-view/user-view":"7daVh","@parcel/transformer-js/src/esmodule-helpers.js":"lqRVo","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"enPgE"}],"jo6P5":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","axios":"jo6P5","prop-types":"7wKI2","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./main-view.scss":"eBaMl","../registration-view/registration-view":"3U8r7","../login-view/login-view":"9YtA0","../movie-card/movie-card":"bwuIu","../movie-view/movie-view":"ggaUx","../genre-view/genre-view":"4tuA0","../director-view/director-view":"9tpci","../user-view/user-view":"7daVh","@parcel/transformer-js/src/esmodule-helpers.js":"lqRVo","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"enPgE"}],"jo6P5":[function(require,module,exports) {
 module.exports = require('./lib/axios');
 
 },{"./lib/axios":"63MyY"}],"63MyY":[function(require,module,exports) {
@@ -36287,268 +36286,7 @@ $RefreshReg$(_c, "DirectorView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./director-view.scss":"cVy0f","@parcel/transformer-js/src/esmodule-helpers.js":"lqRVo","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"enPgE"}],"cVy0f":[function() {},{}],"divrl":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8284 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8284.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Navbar", ()=>Navbar
-);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactBootstrap = require("react-bootstrap");
-var _navbarViewScss = require("./navbar-view.scss");
-class Navbar extends _reactDefault.default.Component {
-    constructor(){
-        super();
-        this.state = {
-        };
-    }
-    onLoggedOut = ()=>{
-        localStorage.clear();
-        window.open("/", "_self");
-    };
-    render() {
-        const { user  } = this.props;
-        const movies = `/`;
-        const profile = `/user/${user}`;
-        return(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar, {
-            bg: "light",
-            expand: "lg",
-            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Container, {
-                className: "navbar-menu",
-                children: [
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Brand, {
-                        href: "/",
-                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("b", {
-                            children: "MyFlix REACT"
-                        }, void 0, false, {
-                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                            lineNumber: 28,
-                            columnNumber: 34
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 28,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Toggle, {
-                        "aria-controls": "basic-navbar-nav"
-                    }, void 0, false, {
-                        fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 29,
-                        columnNumber: 11
-                    }, this),
-                    /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Navbar.Collapse, {
-                        className: "justify-content-end",
-                        id: "responsive-navbar-nav",
-                        children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav, {
-                            className: "me-auto",
-                            children: [
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
-                                    href: "/",
-                                    children: "Movies"
-                                }, void 0, false, {
-                                    fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 32,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown, {
-                                    title: "Directors",
-                                    id: "collasible-nav-dropdown",
-                                    children: [
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "directors/Alan%20Ball",
-                                            children: "Alan Ball"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 36,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "directors/George%20Raymond%20Martin",
-                                            children: "George Raymond Martin"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 37,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "directors/Ricky%20Gervais",
-                                            children: "Ricky Gervais"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 38,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "directors/Craig%20Mazin",
-                                            children: "Craig Mazin"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 39,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "directors/Charlie%20Brooker",
-                                            children: "Charlie Brooker"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 40,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "directors/Jeffrey%20Jacob%20Abrams",
-                                            children: "Jeffrey Jacob Abrams"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 41,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "directors/Shelagh%20Stephenson",
-                                            children: "Shelagh Stephenson"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 42,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "directors/Gideon%20Raff",
-                                            children: "Gideon Raff"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 43,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "directors/Mark%20Cendrowski",
-                                            children: "Mark Cendrowski"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 44,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 35,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown, {
-                                    title: "Genres",
-                                    id: "collasible-nav-dropdown",
-                                    children: [
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "genres/Crime",
-                                            children: "Crime"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 48,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "genres/Fantasy",
-                                            children: "Fantasy"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 49,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "genres/Sitcom",
-                                            children: "Sitcom"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 50,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "genres/Crime",
-                                            children: "Crime"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 51,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "genres/History",
-                                            children: "History"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 52,
-                                            columnNumber: 17
-                                        }, this),
-                                        /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.NavDropdown.Item, {
-                                            href: "genres/Espionage",
-                                            children: "Espionage"
-                                        }, void 0, false, {
-                                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                                            lineNumber: 53,
-                                            columnNumber: 17
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 47,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
-                                    id: "Account",
-                                    href: profile,
-                                    children: "My Profile"
-                                }, void 0, false, {
-                                    fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 56,
-                                    columnNumber: 15
-                                }, this),
-                                /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_reactBootstrap.Nav.Link, {
-                                    id: "logout",
-                                    onClick: ()=>{
-                                        this.onLoggedOut();
-                                    },
-                                    children: "Logout"
-                                }, void 0, false, {
-                                    fileName: "src/components/navbar-view/navbar-view.jsx",
-                                    lineNumber: 57,
-                                    columnNumber: 15
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/components/navbar-view/navbar-view.jsx",
-                            lineNumber: 31,
-                            columnNumber: 13
-                        }, this)
-                    }, void 0, false, {
-                        fileName: "src/components/navbar-view/navbar-view.jsx",
-                        lineNumber: 30,
-                        columnNumber: 11
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "src/components/navbar-view/navbar-view.jsx",
-                lineNumber: 27,
-                columnNumber: 9
-            }, this)
-        }, void 0, false, {
-            fileName: "src/components/navbar-view/navbar-view.jsx",
-            lineNumber: 26,
-            columnNumber: 7
-        }, this));
-    }
-}
-
-  $parcel$ReactRefreshHelpers$8284.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","./navbar-view.scss":"cYTZj","@parcel/transformer-js/src/esmodule-helpers.js":"lqRVo","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"enPgE"}],"cYTZj":[function() {},{}],"7daVh":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-bootstrap":"3AD9A","react-router-dom":"cHIiW","./director-view.scss":"cVy0f","@parcel/transformer-js/src/esmodule-helpers.js":"lqRVo","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"enPgE"}],"cVy0f":[function() {},{}],"7daVh":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5968 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

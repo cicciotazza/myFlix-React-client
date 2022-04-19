@@ -16,7 +16,6 @@ import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { GenreView } from "../genre-view/genre-view";
 import { DirectorView } from '../director-view/director-view';
-import { Navbar } from '../navbar-view/navbar-view';
 import { Userview } from '../user-view/user-view';
 
 export default class MainView extends React.Component {
